@@ -1,0 +1,56 @@
+{
+  "name": "senpy",
+  "version": "0.1.0",
+  "description": "The Senpy Club API Wrapper for Node.js",
+  "keywords": [
+    "typescript",
+    "node"
+  ],
+  "homepage": "https://npmjs.org/package/senpy",
+  "bugs": {
+    "email": "contact@fuwn.me",
+    "url": "https://github.com/senpy-club/node-senpy/issues"
+  },
+  "license": "GPL-3.0-only",
+  "author": {
+    "url": "https://fuwn.me",
+    "email": "contact@fuwn.me",
+    "name": "Fuwn"
+  },
+  "main": "./dist/index.js",
+  "repository": {
+    "url": "https://github.com/senpy-club/node-senpy",
+    "type": "git"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "pnpm run lint -- --fix",
+    "prettier": "prettier .",
+    "prettier:fix": "prettier --write .",
+    "coverage": "pnpm run test -- --coverage",
+    "prepublishOnly": "pinst --disable && pnpm run lint && pnpm run build",
+    "postpublish": "pinst --enable"
+  },
+  "dependencies": {
+    "node-fetch": "^3.2.3"
+  },
+  "devDependencies": {
+    "@theoparis/eslint-config": "github:creepinson/eslint-config#update",
+    "@types/jest": "27.4.1",
+    "@types/node": "17.0.1",
+    "esbuild": "0.14.27",
+    "eslint": "8.11.0",
+    "jest": "27.5.1",
+    "pinst": "3.0.0",
+    "prettier": "2.6.0",
+    "ts-jest": "^27.1.2",
+    "typescript": "4.6.2"
+  },
+  "exports": {
+    "./": "./dist/index.js"
+  },
+  "type": "module",
+  "types": "./dist/index.d.ts"
+}
